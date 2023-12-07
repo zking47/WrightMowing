@@ -19,10 +19,10 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @Html.DisplayNameFor(model => model.CategoryId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                @Html.DisplayNameFor(model => model.TypeId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Status)
@@ -46,10 +46,10 @@
                 @listing.Description
             </td>
             <td>
-                @listing.Category
+                @listing.CategoryId
             </td>
             <td>
-                @listing.Type
+                @listing.TypeId
             </td>
             <td>
                 @listing.Status
@@ -58,9 +58,9 @@
                 @listing.Price
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", "Customer", new { id = listing.Id }) |
-                @Html.ActionLink("Details", "Details", "Customer", new { id = listing.Id }) |
-                @Html.ActionLink("Delete", "Delete", "Customer", new { id = listing.Id })
+                @Html.ActionLink("Edit", "Edit", "Listing", new { id = listing.Id }) |
+                @Html.ActionLink("Details", "Details", "Listing", new { id = listing.Id }) |
+                @Html.ActionLink("Delete", "Delete", "Listing", new { id = listing.Id })
             </td>
             </tr>
         } 

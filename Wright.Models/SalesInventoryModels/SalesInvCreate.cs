@@ -8,5 +8,6 @@ namespace Wright.Models.SalesInventoryModels
     public class SalesInvCreate
     {
         public int ListingNumber { get; set; }
+        public int ListingId { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 @model IEnumerable<Wright.Models.SalesInventoryModels.SalesInvIndex>
 
 @{
-    ViewData["Title"] = "Product Index";
+    ViewData["Title"] = "SalesInventory Index";
 }
 <h1 class="text-center">All Inventories</h1>
 <a class="text-warning" asp-action="Create">Create New Sales Inventory</a>
@@ -14,6 +14,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ListingNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListingId)
             </th>
             <th></th>
         </tr>
@@ -28,9 +31,12 @@
                 @salesInv.ListingNumber
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", "Customer", new { id = salesInv.Id }) |
-                @Html.ActionLink("Details", "Details", "Customer", new { id = salesInv.Id }) |
-                @Html.ActionLink("Delete", "Delete", "Customer", new { id = salesInv.Id })
+                @salesInv.ListingId
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "SalesInventory", new { id = salesInv.Id }) |
+                @Html.ActionLink("Details", "Details", "SalesInventory", new { id = salesInv.Id }) |
+                @Html.ActionLink("Delete", "Delete", "SalesInventory", new { id = salesInv.Id })
             </td>
             </tr>
         } 
