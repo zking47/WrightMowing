@@ -1,0 +1,62 @@
+@model IEnumerable<Wright.Models.MowerTypeModels.MowerTypeIndex>
+
+@{
+    ViewData["Title"] = "Product Index";
+}
+<h1 class="text-center">All Mower Types</h1>
+<a class="text-warning" asp-action="Create">Create New Mower Type</a>
+
+<table class="table table-striped-colums table-dark table-hover table-bordered border-danger">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RidingMower)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PoweredAssist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Electric)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mowerType in Model) {
+            <tr>
+            <td>
+                @mowerType.Id
+            </td>
+            <td>
+                @mowerType.Name
+            </td>
+            <td>
+                @mowerType.Description
+            </td>
+            <td>
+                @mowerType.RidingMower
+            </td>
+            <td>
+                @mowerType.PoweredAssist
+            </td>
+            <td>
+                @mowerType.Electric
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Customer", new { id = mowerType.Id }) |
+                @Html.ActionLink("Details", "Details", "Customer", new { id = mowerType.Id }) |
+                @Html.ActionLink("Delete", "Delete", "Customer", new { id = mowerType.Id })
+            </td>
+            </tr>
+        } 
+    </tbody>
+</table>

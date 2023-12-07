@@ -1,0 +1,59 @@
+@model Wright.Models.ListingModels.ListingDetail
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<hr />
+<div>
+    <dl class="row">
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Id)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Id)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Category)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Category)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Description)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Description)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Status)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Status)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Type)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Type)
+    </dd>
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Price)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Price)
+    </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action = "Edit" class="text-warning" asp-route-id=@Model.Id>Edit</a> |
+    <a asp-action = "Index" class="text-warning">Back To List</a>
+</div>

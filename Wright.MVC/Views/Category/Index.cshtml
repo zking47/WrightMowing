@@ -1,0 +1,38 @@
+@model IEnumerable<Wright.Models.CategoryModels.CategoryIndex>
+
+@{
+    ViewData["Title"] = "Product Index";
+}
+<h1 class="text-center">All Categories</h1>
+<a class="text-warning" asp-action="Create">Create New Category</a>
+
+<table class="table table-striped-colums table-dark table-hover table-bordered border-danger">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model) {
+            <tr>
+            <td>
+                @category.Id
+            </td>
+            <td>
+                @category.Name
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Customer", new { id = category.Id }) |
+                @Html.ActionLink("Details", "Details", "Customer", new { id = category.Id }) |
+                @Html.ActionLink("Delete", "Delete", "Customer", new { id = category.Id })
+            </td>
+            </tr>
+        } 
+    </tbody>
+</table>

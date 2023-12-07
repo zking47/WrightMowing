@@ -1,0 +1,38 @@
+@model IEnumerable<Wright.Models.SalesInventoryModels.SalesInvIndex>
+
+@{
+    ViewData["Title"] = "Product Index";
+}
+<h1 class="text-center">All Inventories</h1>
+<a class="text-warning" asp-action="Create">Create New Sales Inventory</a>
+
+<table class="table table-striped-colums table-dark table-hover table-bordered border-danger">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListingNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var salesInv in Model) {
+            <tr>
+            <td>
+                @salesInv.Id
+            </td>
+            <td>
+                @salesInv.ListingNumber
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Customer", new { id = salesInv.Id }) |
+                @Html.ActionLink("Details", "Details", "Customer", new { id = salesInv.Id }) |
+                @Html.ActionLink("Delete", "Delete", "Customer", new { id = salesInv.Id })
+            </td>
+            </tr>
+        } 
+    </tbody>
+</table>

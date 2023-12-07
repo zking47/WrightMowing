@@ -1,0 +1,68 @@
+@model IEnumerable<Wright.Models.ListingModels.ListingIndex>
+
+@{
+    ViewData["Title"] = "Product Index";
+}
+<h1 class="text-center">All Listings</h1>
+<a class="text-warning" asp-action="Create">Create New Listing</a>
+
+<table class="table table-striped-colums table-dark table-hover table-bordered border-danger">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var listing in Model) {
+            <tr>
+            <td>
+                @listing.Id
+            </td>
+            <td>
+                @listing.Name
+            </td>
+            <td>
+                @listing.Description
+            </td>
+            <td>
+                @listing.Category
+            </td>
+            <td>
+                @listing.Type
+            </td>
+            <td>
+                @listing.Status
+            </td>
+            <td>
+                @listing.Price
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Customer", new { id = listing.Id }) |
+                @Html.ActionLink("Details", "Details", "Customer", new { id = listing.Id }) |
+                @Html.ActionLink("Delete", "Delete", "Customer", new { id = listing.Id })
+            </td>
+            </tr>
+        } 
+    </tbody>
+</table>
